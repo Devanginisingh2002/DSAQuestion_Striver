@@ -58,38 +58,67 @@ public class Question_Array {
   //     System.out.println(secondLargest(arr));
   //   }
   // optimize approach: T.C: O(n)
-  public static int second_largest(int nums[]) {
-    int largest = nums[0];
-    int second_largest = Integer.MIN_VALUE;
-    for(int i=1; i<nums.length; i++){
-        if(nums[i] > largest){
-            second_largest = largest;
-            largest = nums[i];
-        }
-        else if(nums[i] < largest && nums[i] > second_largest){
-            second_largest = nums[i];
-        }
-    }
-    return second_largest;
-  }
-  public static int second_smallest(int nums[]){
-    int smallest = nums[0];
-    int second_smallest = Integer.MAX_VALUE;
-    for(int i=1; i<nums.length; i++){
-        if(nums[i] < smallest){
-            second_smallest = smallest;
-            smallest = nums[i];
-        }
-        else if(nums[i] > smallest && nums[i] < second_smallest){
-            second_smallest = nums[i];
-        }
-    }
-    return second_smallest;
-  }
+  // public static int second_largest(int nums[]) {
+  //   int largest = nums[0];
+  //   int second_largest = Integer.MIN_VALUE;
+  //   for(int i=1; i<nums.length; i++){
+  //       if(nums[i] > largest){
+  //           second_largest = largest;
+  //           largest = nums[i];
+  //       }
+  //       else if(nums[i] < largest && nums[i] > second_largest){
+  //           second_largest = nums[i];
+  //       }
+  //   }
+  //   return second_largest;
+  // }
+  // public static int second_smallest(int nums[]){
+  //   int smallest = nums[0];
+  //   int second_smallest = Integer.MAX_VALUE;
+  //   for(int i=1; i<nums.length; i++){
+  //       if(nums[i] < smallest){
+  //           second_smallest = smallest;
+  //           smallest = nums[i];
+  //       }
+  //       else if(nums[i] > smallest && nums[i] < second_smallest){
+  //           second_smallest = nums[i];
+  //       }
+  //   }
+  //   return second_smallest;
+  // }
 
+  // public static void main(String args[]){
+  //   int nums[] = {2, 5, 6, 7 ,1};
+  //   System.out.println(second_largest(nums));
+  //   System.out.println(second_smallest(nums));
+  // }
+
+  /*************** SORTED ARRAY **************/
+  // public static boolean sortedArray(int nums[]){
+  //   for(int i=0; i<nums.length-1; i++){
+  //     if(nums[i] > nums[i+1]){
+  //       return false;
+  //     }
+  //   }
+  //   return true;
+  // }
+  // public static void main(String args[]){
+  //   int nums[] = {1, 2, 3, 4, 5};
+  //   System.out.println(sortedArray(nums));
+  // }
+
+  /************REMOVE DUPLICATE FROM SORTED ARRAY ********: HASH SET/
+  
+  /******** LEFT ROTATE AN ARRAY BY D PLACE ********/
+  public static void LeftRotate(int nums[]){
+    int temp = nums[0];
+    for(int i=1; i<nums.length; i++){
+      nums[i-1] = nums[i];
+    }
+    nums[nums.length-1] = temp;
+  }
   public static void main(String args[]){
-    int nums[] = {2, 5, 6, 7 ,1};
-    System.out.println(second_largest(nums));
-    System.out.println(second_smallest(nums));
+    int nums[] = {1, 2, 3, 4, 5};
+    System.out.println(LeftRotate(nums));
   }
 }
