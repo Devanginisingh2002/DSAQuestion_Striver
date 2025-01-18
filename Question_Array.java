@@ -108,16 +108,16 @@ public class Question_Array {
   // }
 
   /************REMOVE DUPLICATE FROM SORTED ARRAY ********: HASH SET/
-  
+
   /******** LEFT ROTATE AN ARRAY BY D PLACE ********/
-  public static void LeftRotate(int nums[]){
+  public static void LeftRotate(int nums[]) {
     int temp = nums[0];
-    for(int i=1; i<nums.length; i++){
-      nums[i-1] = nums[i];
+    for (int i = 1; i < nums.length; i++) {
+      nums[i - 1] = nums[i];
     }
-    nums[nums.length-1] = temp;
+    nums[nums.length - 1] = temp;
   }
-  public static void main(String args[]){
+  public static void main(String args[]) {
     int nums[] = {1, 2, 3, 4, 5};
     System.out.println(LeftRotate(nums));
   }
